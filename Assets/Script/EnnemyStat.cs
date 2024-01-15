@@ -24,7 +24,7 @@ public class EnnemyStat : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            targetCharacter = GetComponent<Level>().AddExperience(experience_reward);
+            //targetCharacter = GetComponent<Level>().AddExperience(experience_reward);
             Die();
         }
     }

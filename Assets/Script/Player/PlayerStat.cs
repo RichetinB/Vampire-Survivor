@@ -15,18 +15,18 @@ public class PlayerStat : MonoBehaviour
     {
         currentHealth = maxHealth;
 
-        HealthBar healthBar = FindObjectOfType<HealthBar>(); 
+        //HealthBar healthBar = FindObjectOfType<HealthBar>(); 
 
-        if (healthBar != null)
-        {
-            OnHealthChanged += healthBar.OnPlayerHealthChanged;
+        //if (healthBar != null)
+        //{
+            //OnHealthChanged += healthBar.OnPlayerHealthChanged;
 
-            healthBar.SetMaxHealth(maxHealth);
-        }
-        else
-        {
-            Debug.LogError("La barre de vie n'a pas été trouvée dans la scène.");
-        }
+            //healthBar.SetMaxHealth(maxHealth);
+        //}
+        //else
+        //{
+            //Debug.LogError("La barre de vie n'a pas été trouvée dans la scène.");
+        //}
     }
 
     public void TakeDamage(int damageAmount)
