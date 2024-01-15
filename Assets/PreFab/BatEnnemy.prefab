@@ -9,8 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4634960687660492900}
+<<<<<<< HEAD
   - component: {fileID: 4814993135775603638}
   - component: {fileID: 8205333389500220341}
+=======
+  - component: {fileID: 4607387333444584825}
+  - component: {fileID: 3486558564572109848}
+  - component: {fileID: 5887186096962855236}
+>>>>>>> 69846298bb29418430f6ea646da37bc816d44637
   m_Layer: 0
   m_Name: BatEnnemy
   m_TagString: Ennemy
@@ -34,6 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &4814993135775603638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,6 +58,9 @@ MonoBehaviour:
   spawnPrefab: {fileID: 0}
   damage: 10
 --- !u!61 &8205333389500220341
+=======
+--- !u!61 &4607387333444584825
+>>>>>>> 69846298bb29418430f6ea646da37bc816d44637
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,8 +84,46 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+=======
+  m_Size: {x: 0.2, y: 0.3}
+  m_EdgeRadius: 0
+--- !u!50 &3486558564572109848
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634960687660492903}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &5887186096962855236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634960687660492903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ab8d620af2999b44b1213ea3cddfa37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> 69846298bb29418430f6ea646da37bc816d44637
 --- !u!1 &4634960687781298352
 GameObject:
   m_ObjectHideFlags: 0
