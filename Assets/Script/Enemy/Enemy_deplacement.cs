@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_deplacement : MonoBehaviour
 {
-    [SerializeField] Transform targetDestination;
+    [SerializeField] GameObject targetDestination;
     [SerializeField] float speed;
 
     Rigidbody2D rgdbd2d;
@@ -16,7 +16,8 @@ public class Enemy_deplacement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 direction = (targetDestination.position - transform.position).normalized;
+       
+        Vector3 direction = (targetDestination.transform.position - transform.position).normalized;
         rgdbd2d.velocity = direction * speed;
     }
 }
