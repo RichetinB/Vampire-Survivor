@@ -55,13 +55,7 @@ public class PlayerStat : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            other.GetComponent<EnnemyStat>().TakeDamage(damage);
-        }
-    }
+    
 
     void Update()
     {

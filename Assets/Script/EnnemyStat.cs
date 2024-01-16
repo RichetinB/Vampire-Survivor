@@ -22,7 +22,7 @@ public class EnnemyStat : MonoBehaviour
     {
         currentHealth -= damageAmount;
 
-        if (currentHealth <= 0)
+        if (currentHealth < 1)
         {
             //targetCharacter = GetComponent<Level>().AddExperience(experience_reward);
             Die();
