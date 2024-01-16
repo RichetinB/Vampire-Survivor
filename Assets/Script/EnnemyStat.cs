@@ -31,9 +31,13 @@ public class EnnemyStat : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("L'ennemi est mort !");
-        Destroy(gameObject);
+        GameObject myLevel = GameObject.Find("LevelManager");
+
+        Debug.Log(myLevel.GetComponent<Level>());
+        myLevel.GetComponent<Level>().AddExperience(experience_reward);
+        Debug.Log("L'ennemi a donner l exp !");
         Instantiate(spawnPrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }   
 
     void OnTriggerEnter2D(Collider2D other)
