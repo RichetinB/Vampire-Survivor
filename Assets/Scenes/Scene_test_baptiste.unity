@@ -480,6 +480,24 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1206538312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 172262078467804534, guid: 3a762780132c4f747a4fbdbdf87c427a, type: 3}
+  m_PrefabInstance: {fileID: 14265466205178139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1206538320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206538312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c33a6ce5d21c65439c23bb89d6ed6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontal: 0
 --- !u!1 &1313380561
 GameObject:
   m_ObjectHideFlags: 0
