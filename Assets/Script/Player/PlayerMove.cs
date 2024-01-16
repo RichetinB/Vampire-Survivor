@@ -25,7 +25,7 @@ public class PlayerMove : MonoBehaviour
         movementVector.x = Input.GetAxisRaw("Horizontal");
         movementVector.y = Input.GetAxisRaw("Vertical");
 
-        //animate.horizontal = movementVector.x;
+        animate.horizontal = movementVector.x;
 
         movementVector *= speed;
 
