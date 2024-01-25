@@ -24,21 +24,36 @@ public class EnnemyStat : MonoBehaviour
 
         if (currentHealth < 1)
         {
-            //targetCharacter = GetComponent<Level>().AddExperience(experience_reward);
             Die();
         }
     }
 
-    void Die()
+    public void Die()
     {
-        GameObject myLevel = GameObject.Find("LevelManager");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        Debug.Log(myLevel.GetComponent<Level>());
-        myLevel.GetComponent<Level>().AddExperience(experience_reward);
-        Debug.Log("L'ennemi a donner l exp !");
-        Instantiate(spawnPrefab, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-    }   
+        if (player != null)
+        {
+            Level playerLevel = player.GetComponent<Level>();
+
+            if (playerLevel != null)
+            {
+                playerLevel.AddExperience(experience_reward);
+
+                Instantiate(spawnPrefab, transform.position, Quaternion.identity);
+
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.LogError("Le script Level n'a pas été trouvé sur le joueur.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Le joueur n'a pas été trouvé dans la scène.");
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

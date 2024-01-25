@@ -7,6 +7,8 @@ public class Level : MonoBehaviour
     public int level = 1;
     public int experience = 0;
 
+    public EXPbarre expBar;
+
     int TO_LEVEL_UP
     {
         get
@@ -14,13 +16,23 @@ public class Level : MonoBehaviour
             return level * 100;
         }
     }
+
+    void Start()
+    {
+        expBar = GetComponent<EXPbarre>();
+
+        UpdateExperienceBar();
+    }
+
     public void AddExperience(int amount)
     {
         experience += amount;
         CheckLevelUp();
+
+        UpdateExperienceBar();
     }
 
-    public void CheckLevelUp()
+    void CheckLevelUp()
     {
         if (experience >= TO_LEVEL_UP)
         {
@@ -29,4 +41,16 @@ public class Level : MonoBehaviour
         }
     }
 
+    void UpdateExperienceBar()
+    {
+        if (expBar != null)
+        {
+            expBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
+            expBar.SetlevelText(level);
+        }
+        else
+        {
+            Debug.LogError("Le script EXPbarre n'a pas été trouvé sur le joueur.");
+        }
+    }
 }
