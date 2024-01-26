@@ -11,6 +11,14 @@ public class PlayerStat : MonoBehaviour
 
     public event Action<int> OnHealthChanged;
 
+    [HideInInspector] public Level level;
+
+
+    private void Awake()
+    {
+        level = GetComponent<Level>();
+    }
+
     void Start()
     {
         currentHealth = maxHealth;

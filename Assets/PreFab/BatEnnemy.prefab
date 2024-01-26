@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4607387333444584825}
   - component: {fileID: 5887186096962855236}
   - component: {fileID: -3427307269621724720}
+  - component: {fileID: 6466688870337048585}
   m_Layer: 0
   m_Name: BatEnnemy
   m_TagString: Enemy
@@ -113,6 +114,20 @@ MonoBehaviour:
   currentHealth: 0
   spawnPrefab: {fileID: 316127275947586228, guid: 3af3082d647cc6349a6fbd2789a0231f, type: 3}
   damage: 10
+--- !u!114 &6466688870337048585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634960687660492903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d25a177cf0dc1428b888deb0600458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gempickup: {fileID: 316127275947586228, guid: 3af3082d647cc6349a6fbd2789a0231f, type: 3}
+  chance: 0.5
 --- !u!1 &4634960687781298352
 GameObject:
   m_ObjectHideFlags: 0
