@@ -19,7 +19,7 @@ public class KnifeAttack : MonoBehaviour
 
         if (!IsInCameraView())
         {
-            Destroy(gameObject);
+             Destroy(gameObject);
         }
     }
 
@@ -34,6 +34,6 @@ public class KnifeAttack : MonoBehaviour
 
     bool IsInCameraView()
     {
-        return GetComponent<Renderer>().isVisible;
+       return GetComponent<Renderer>().isVisible;
     }
 }
