@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    public float timeRemaining = 10;
+    public float timeRemaining = 300;
     public bool timerIsRunning = false;
 
     [SerializeField] TMPro.TextMeshProUGUI TimerText;
+    public GameObject canvasWin;
 
     private void Start()
     {
-        // Démarre le chronomètre automatiquement
+ 
         timerIsRunning = true;
     }
 
@@ -22,7 +23,6 @@ public class Timer : MonoBehaviour
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
-                // Met à jour le texte du timer à chaque mise à jour du chronomètre
                 TimerTextMesh();
             }
             else
@@ -30,13 +30,21 @@ public class Timer : MonoBehaviour
                 Debug.Log("Le temps est écoulé !");
                 timeRemaining = 0;
                 timerIsRunning = false;
+                OpenWinCanvas();
             }
         }
     }
 
-    // Met à jour le texte du timer sur le canvas
     void TimerTextMesh()
     {
         TimerText.text = "Time : " + timeRemaining.ToString("F2");
+    }
+
+    void OpenWinCanvas()
+    {
+   
+        canvasWin.SetActive(true);
+
+        Time.timeScale = 0f;
     }
 }

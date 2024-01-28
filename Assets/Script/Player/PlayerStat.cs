@@ -12,6 +12,7 @@ public class PlayerStat : MonoBehaviour
     public event Action<int> OnHealthChanged;
 
     [HideInInspector] public Level level;
+    public GameObject canvasLose;
 
     private void Awake()
     {
@@ -50,9 +51,11 @@ public class PlayerStat : MonoBehaviour
     void Die()
     {
         Debug.Log("Le joueur est mort !");
+        canvasLose.SetActive(true);
+        Time.timeScale = 0f;
         Destroy(gameObject);
     }
-
+        
     void UpdateHealth()
     {
         if (OnHealthChanged != null)
@@ -65,10 +68,8 @@ public class PlayerStat : MonoBehaviour
     {
         maxHealth += amount;
 
-        // Assurez-vous que la santé actuelle ne dépasse pas la nouvelle valeur maximale
         currentHealth = Mathf.Min(currentHealth, maxHealth);
 
-        // Mettez à jour la barre de santé avec la nouvelle valeur maximale
         if (OnHealthChanged != null)
         {
             OnHealthChanged.Invoke(currentHealth);
@@ -79,10 +80,8 @@ public class PlayerStat : MonoBehaviour
     {
         currentHealth += amount;
 
-        // Assurez-vous que la santé actuelle ne dépasse pas la nouvelle valeur maximale
         currentHealth = Mathf.Min(currentHealth, maxHealth);
 
-        // Mettez à jour la barre de santé avec la nouvelle valeur de santé actuelle
         if (OnHealthChanged != null)
         {
             OnHealthChanged.Invoke(currentHealth);

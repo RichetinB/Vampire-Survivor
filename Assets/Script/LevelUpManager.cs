@@ -7,15 +7,15 @@ public class LevelUpManager : MonoBehaviour
     [SerializeField] PlayerStat playerstat;
     [SerializeField] Level level;
     [SerializeField] KnifeAttack knifedmg;
+    [SerializeField] WhipWeapon whipdmg;
 
-    // Cette fonction sera appelée depuis votre bouton
+
     public void HealthAugment()
     {
-        // Vérifie si le script PlayerStat est assigné
+    
         if (playerstat != null)
         {
-            // Appelle la fonction d'augmentation de la santé du script PlayerStat
-            playerstat.IncreaseMaxHealth(10); // Changez la valeur 10 selon vos besoins
+            playerstat.IncreaseMaxHealth(10); 
             level.CloseLevelUpCanvas();
         }
         else
@@ -28,8 +28,9 @@ public class LevelUpManager : MonoBehaviour
     {
         if (playerstat != null)
         {
-            // Appelle la fonction d'augmentation de la santé du script PlayerStat
-            knifedmg.IncreaseDamage(10); // Changez la valeur 10 selon vos besoins
+  
+            knifedmg.IncreaseDamage(10);
+            whipdmg.IncreaseDamage(10);
             level.CloseLevelUpCanvas();
         }
         else
@@ -41,8 +42,8 @@ public class LevelUpManager : MonoBehaviour
     {
         if (playerstat != null)
         {
-            // Appelle la fonction d'augmentation de la santé du script PlayerStat
-            playerstat.IncreaseCurrentHealth(10); // Changez la valeur 10 selon vos besoins
+     
+            playerstat.IncreaseCurrentHealth(10);
             level.CloseLevelUpCanvas();
         }
         else
@@ -50,5 +51,7 @@ public class LevelUpManager : MonoBehaviour
             Debug.LogError("PlayerStat script is not assigned!");
         }
     }
+
+
 
 }

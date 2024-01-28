@@ -44,7 +44,6 @@ public class KnifeAttack : MonoBehaviour
     {
         damage += amount;
 
-        // Mettez à jour d'autres composants, UI, etc., si nécessaire
         if (OnDamageChanged != null)
         {
             OnDamageChanged.Invoke(damage);
