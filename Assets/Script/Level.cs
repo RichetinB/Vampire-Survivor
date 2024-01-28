@@ -9,7 +9,11 @@ public int level = 1;
 public int experience = 0;
 public int amount;
 [SerializeField] EXPbarre expBar;
-int TO_LEVEL_UP
+[SerializeField] PlayerStat playerstat;
+[SerializeField] GameObject LevelUpCanvas;
+
+
+    int TO_LEVEL_UP
 {
     get
     {
@@ -40,6 +44,32 @@ void CheckLevelUp()
             experience -= TO_LEVEL_UP;
             level += 1;
             expBar.SetlevelText(level);
+
+            ShowLevelUpCanvas();
         }
+    }
+    void ShowLevelUpCanvas()
+    {
+        LevelUpCanvas.SetActive(true);
+        TogglePause();
+    }
+    void TogglePause()
+    {
+        if (Time.timeScale == 0f)
+        {
+            // Si le jeu est déjà en pause, le remettre en marche
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            // Si le jeu est en cours, le mettre en pause
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void CloseLevelUpCanvas()
+    {
+        LevelUpCanvas.SetActive(false);
+        TogglePause();
     }
 }

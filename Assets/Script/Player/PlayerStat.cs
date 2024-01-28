@@ -13,7 +13,6 @@ public class PlayerStat : MonoBehaviour
 
     [HideInInspector] public Level level;
 
-
     private void Awake()
     {
         level = GetComponent<Level>();
@@ -23,12 +22,11 @@ public class PlayerStat : MonoBehaviour
     {
         currentHealth = maxHealth;
 
-        HealthBar healthBar = FindObjectOfType<HealthBar>(); 
+        HealthBar healthBar = FindObjectOfType<HealthBar>();
 
         if (healthBar != null)
         {
             OnHealthChanged += healthBar.OnPlayerHealthChanged;
-
             healthBar.SetMaxHealth(maxHealth);
         }
         else
@@ -63,10 +61,41 @@ public class PlayerStat : MonoBehaviour
         }
     }
 
-    
+    public void IncreaseMaxHealth(int amount)
+    {
+        maxHealth += amount;
+
+        // Assurez-vous que la santé actuelle ne dépasse pas la nouvelle valeur maximale
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
+
+        // Mettez à jour la barre de santé avec la nouvelle valeur maximale
+        if (OnHealthChanged != null)
+        {
+            OnHealthChanged.Invoke(currentHealth);
+        }
+    }
+
+    public void IncreaseCurrentHealth(int amount)
+    {
+        currentHealth += amount;
+
+        // Assurez-vous que la santé actuelle ne dépasse pas la nouvelle valeur maximale
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
+
+        // Mettez à jour la barre de santé avec la nouvelle valeur de santé actuelle
+        if (OnHealthChanged != null)
+        {
+            OnHealthChanged.Invoke(currentHealth);
+        }
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+    }
 
     void Update()
     {
-        // Ajoute d'autres fonctionnalités de mise à jour ici si nécessaire.
+        // Ajoutez d'autres fonctionnalités de mise à jour ici si nécessaire.
     }
 }

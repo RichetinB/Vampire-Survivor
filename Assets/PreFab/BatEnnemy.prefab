@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gempickup: {fileID: 316127275947586228, guid: 3af3082d647cc6349a6fbd2789a0231f, type: 3}
-  chance: 0.5
+  chance: 0
 --- !u!1 &4634960687781298352
 GameObject:
   m_ObjectHideFlags: 0

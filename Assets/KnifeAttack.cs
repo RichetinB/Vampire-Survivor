@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class KnifeAttack : MonoBehaviour
 {
     public float speed = 10f;
     public int damage = 100;
+
+    public event Action<int> OnDamageChanged;
 
     void Update()
     {
@@ -35,5 +38,16 @@ public class KnifeAttack : MonoBehaviour
     bool IsInCameraView()
     {
        return GetComponent<Renderer>().isVisible;
+    }
+
+    public void IncreaseDamage(int amount)
+    {
+        damage += amount;
+
+        // Mettez à jour d'autres composants, UI, etc., si nécessaire
+        if (OnDamageChanged != null)
+        {
+            OnDamageChanged.Invoke(damage);
+        }
     }
 }
