@@ -50,4 +50,5 @@ public class LevelUpManager : MonoBehaviour
             Debug.LogError("PlayerStat script is not assigned!");
         }
     }
+
 }
